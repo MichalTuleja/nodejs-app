@@ -8,6 +8,8 @@ const cookieParser = require('cookie-parser');
 const AuthMiddleware = require('./api/middleware/Authentication');
 const Router = require('./api/routing');
 
+const API_VERSION = 'v1';
+
 var app = express();
 
 // Express configuration
@@ -22,7 +24,7 @@ app.use(cookieParser());
 //app.use(AuthMiddleware);
 
 // Routing
-app.use('/api', Router);
+app.use('/api/' + API_VERSION, Router);
 
 
 // Start application

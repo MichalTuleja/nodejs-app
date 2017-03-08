@@ -1,8 +1,8 @@
 "use strict";
 
-ErrorService = {
+var ErrorService = {
     generalError: generalError,
-    databaseError: generalError
+    databaseError: databaseError
 };
 
 function generalError(res, err) {
