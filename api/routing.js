@@ -27,6 +27,8 @@ function init() {
     router.get("/collection/:name", controllers.GenericController.getDataList);
     router.put("/collection/:name", controllers.GenericController.insertData);
     router.post("/collection/:name/:id", controllers.GenericController.updateData);
+    
+    router.get("/init", controllers.GenericController.initializeDatabase);
 
     // User management
 //    router.get("/users/:id", controllers.UserController.noop);

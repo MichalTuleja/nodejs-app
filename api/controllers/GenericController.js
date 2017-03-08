@@ -11,6 +11,7 @@ var GenericController = {
     insertData: insertData,
     updateData: updateData,
     validateData: validateData,
+    initializeDatabase: initializeDatabase
 };
 
 function listCollections(req, res) {
@@ -83,6 +84,10 @@ function validateData(req, res) {
         res.status(HttpStatus.INTERNAL_SERVER_ERROR);
         res.send();
     });
+}
+
+function initializeDatabase() {
+    
 }
 
 function unknownAction(req,res){

@@ -12,7 +12,7 @@ const SchemaDefinitions = require('require-all')({
 const SchemaInstance = 4;
 const appConfig = require('../../config/dev.js');
 
-var database;
+var database = {};
 
 var DataService = {
     validate: validate,
@@ -29,13 +29,13 @@ function validate(collection, data) {
     return true;
 }
 
-function connect(database) {
-    if (!database) {
-        database = new Sequelize(database, '', '', appConfig.database);
+function connect(databaseName) {
+    if (!database[databaseName]) {
+        database[databaseName] = new Sequelize(databaseName, '', '', appConfig.database);
     }
 }
 
-function convertSchema() {
+function convertSchema(schema) {
     var User = sequelize.define('user', {
         username: Sequelize.STRING,
         birthday: Sequelize.DATE
@@ -70,7 +70,7 @@ function create(collection, data) {
 function query() {
     User.findAll().then(function (users) {
         console.log(users)
-    })
+    });
 }
 
 
