@@ -1,6 +1,6 @@
 "use strict";
 
-const md5 = require('MD5');
+const md5 = require('md5');
 const uuid = require('node-uuid');
 
 var AuthController = {

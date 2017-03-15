@@ -4,6 +4,7 @@ const PUBLIC_DIR = process.env.FRONTEND_DIR || 'public';
 const express = require("express");
 const bodyParser  = require("body-parser");
 const cookieParser = require('cookie-parser');
+const helmet = require('helmet');
 
 const AuthMiddleware = require('./api/middleware/Authentication');
 const Router = require('./api/routing');
@@ -18,6 +19,7 @@ app.use(bodyParser.json());
 
 app.use(express.static(PUBLIC_DIR));
 app.use(cookieParser());
+app.use(helmet());
 //app.use(databaseMiddleware);
 
 //Auth middleware

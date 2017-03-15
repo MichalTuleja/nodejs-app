@@ -1,6 +1,6 @@
 {
   "name": "nodejs-task",
-  "version": "1.0.0",
+  "version": "1.0.0-alpha",
   "keywords": [
     "util",
     "functional",
@@ -11,22 +11,29 @@
   "author": "michal",
   "contributors": [],
   "dependencies": {
-    "MD5": "^1.2.2",
-    "body-parser": "^1.13.1",
-    "cookie-parser": "^1.3.5",
-    "express": "^4.13.0",
-    "http-status-codes": "^1.1.6",
-    "jsonschema": "^1.1.1",
-    "mysql": "^2.7.0",
-    "node-uuid": "^1.4.3",
-    "passport": "^0.2.2",
-    "passport-local": "^1.0.0",
-    "q": "^1.4.1",
-    "require-all": "^2.2.0",
-    "sequelize": "^3.30.2",
-    "sqlite3": "^3.1.8"
+    "body-parser": "1.13.1",
+    "cookie-parser": "1.3.5",
+    "express": "4.13.0",
+    "helmet": "3.5.0",
+    "http-status-codes": "1.1.6",
+    "jsonschema": "1.1.1",
+    "md5": "2.2.1",
+    "mysql": "2.7.0",
+    "node-uuid": "1.4.3",
+    "passport": "0.2.2",
+    "passport-local": "1.0.0",
+    "q": "1.4.1",
+    "require-all": "2.2.0",
+    "sequelize": "3.30.2",
+    "sqlite3": "3.1.8"
+  },
+  "engines": {
+    "node": "4.7.2"
   },
   "scripts": {
-    "start": "node app.js"
+    "postinstall": "bower install",
+    "start": "node app.js",
+    "test": "echo not_implemented",
+    "clean": "echo not_implemented"
   }
 }
